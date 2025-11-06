@@ -109,22 +109,22 @@ This project solves these problems in **one integrated solution** 💡
 ## 🧮 Algorithm – Bakery Management System with Customer Segmentation
 
 - Step 1: Initialize Database
-    -Create three tables in SQLite:
-      1.customers → store customer details
-      2.products → store product details & stock
-      3.transactions → store billing records
+    - Create three tables in SQLite:
+        - 1.customers → store customer details
+        - 2.products → store product details & stock
+        - 3.transactions → store billing records
 
-  -If DB doesn’t exist, auto-generate schema.
+  - If DB doesn’t exist, auto-generate schema.
 
 - Step 2: Add Customer
-    -Input: Name, Gender, Age, Mobile, City, Delivery Option (Pickup/Delivery).
-    -Save into customers table.
-    -Ensure customer_id is unique.
+    - Input: Name, Gender, Age, Mobile, City, Delivery Option (Pickup/Delivery).
+    - Save into customers table.
+    - Ensure customer_id is unique.
 
 - Step 3: Add Product to Inventory
-    -Input: Product Name, Category, Price, Stock Quantity.
-    -Save into products table.
-    -If product exists → update stock.
+    - Input: Product Name, Category, Price, Stock Quantity.
+    - Save into products table.
+    - If product exists → update stock.
 
 - Step 4: Billing Counter
       - 1.Select existing customer.
@@ -135,10 +135,10 @@ This project solves these problems in **one integrated solution** 💡
           -If No → show error ❌
 
      - 5.Compute:
-        -gross_amount = quantity × price
-        -discount = gross_amount × 0.10 (10% default)
-        -gst_amount = 0.18 × (gross_amount - discount)
-        -net_amount = gross_amount - discount + gst_amount
+        - gross_amount = quantity × price
+        - discount = gross_amount × 0.10 (10% default)
+        - gst_amount = 0.18 × (gross_amount - discount)
+        - net_amount = gross_amount - discount + gst_amount
   
     - 6.Insert transaction record in transactions table.
     - 7.Reduce stock in products table.
@@ -151,15 +151,15 @@ This project solves these problems in **one integrated solution** 💡
     - Stock Depletion Chart: Show product stock trend from products table.
 
 - Step 6: Customer Segmentation (RFM + KMeans)
-    1.For each customer:
-      -Recency (R): Days since last purchase
-      -Frequency (F): Number of transactions
-      -Monetary (M): Total amount spent
+    - 1.For each customer:
+      - Recency (R): Days since last purchase
+      - Frequency (F): Number of transactions
+      - Monetary (M): Total amount spent
   
-    2.Normalize (scale) RFM features using StandardScaler.
-    3.Apply KMeans clustering → choose k=3 or 4 clusters.
-    4.Assign each customer a segment (e.g., VIP, Regular, Low-spender).
-    5.Save trained KMeans model as model.pkl.
+    - 2.Normalize (scale) RFM features using StandardScaler.
+    - 3.Apply KMeans clustering → choose k=3 or 4 clusters.
+    - 4.Assign each customer a segment (e.g., VIP, Regular, Low-spender).
+    - 5.Save trained KMeans model as model.pkl.
 
 - Step 7: Model Reuse
     - Load model.pkl whenever needed.
