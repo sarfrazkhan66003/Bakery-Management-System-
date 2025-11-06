@@ -127,19 +127,19 @@ This project solves these problems in **one integrated solution** 💡
     - If product exists → update stock.
 
 - Step 4: Billing Counter
-      - 1.Select existing customer.
-      - 2.Select product(s) and quantity.
-      - 3.Fetch price from products table.
-      - 4.Check if sufficient stock exists:
-          -If Yes → continue
-          -If No → show error ❌
-
-     - 5.Compute:
-        - gross_amount = quantity × price
-        - discount = gross_amount × 0.10 (10% default)
-        - gst_amount = 0.18 × (gross_amount - discount)
-        - net_amount = gross_amount - discount + gst_amount
+    - 1.Select existing customer.
+    - 2.Select product(s) and quantity.
+    - 3.Fetch price from products table.
+    - 4.Check if sufficient stock exists:
+      - If Yes → continue
+      - If No → show error ❌
   
+    - 5.Compute:
+      - gross_amount = quantity × price
+      - discount = gross_amount × 0.10 (10% default)
+      - gst_amount = 0.18 × (gross_amount - discount)
+      - net_amount = gross_amount - discount + gst_amount
+    
     - 6.Insert transaction record in transactions table.
     - 7.Reduce stock in products table.
     - 8.Generate Bill → show in Streamlit (with customer + product + final amount).
